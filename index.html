@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Consulting — Break Through Every Stage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --yellow: #FCBE1A;
+    --yellow-light: #FEF3C7;
+    --grey: #405678;
+    --grey-light: #EEF1F5;
+    --grey-mid: #8898AA;
+    --white: #FFFFFF;
+    --ink: #1A1F2E;
+    --border: #E4E8EF;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    color: var(--grey);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .nav-logo span { color: var(--yellow); }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--grey-mid);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--grey); }
+  .nav-cta {
+    background: var(--yellow);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: calc(100vh - 64px);
+    display: flex; align-items: center;
+    padding: 80px 5vw 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-mark {
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 520px; height: 520px;
+    border-radius: 50%;
+    background: var(--yellow-light);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .hero-portrait {
+    position: absolute;
+    top: 180px;
+    right: 180px;
+    width: 360px;
+    border-radius: 14px;
+    max-width: 68vw;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 16px 40px rgba(26,31,46,0.18);
+    border: 8px solid rgba(255,255,255,0.9);
+    z-index: 10;
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--grey);
+    background: var(--grey-light);
+    padding: 6px 14px; border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  .eyebrow-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--yellow);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 4.5vw, 4rem);
+    line-height: 1.1;
+    color: var(--grey);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+   .hero h2 {
+    font-family: var(--sans);
+    font-size: 1.3rem;
+    line-height: 1.1;
+    color: var(--yellow);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--ink);
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--grey-mid);
+    line-height: 1.7;
+    max-width: 440px;
+    margin-bottom: 40px;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--yellow);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+  .btn-ghost {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-bottom: 2px solid var(--yellow);
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+  }
+  .btn-ghost:hover { opacity: 0.7; }
+
+  .hero-visual {
+    position: relative;
+  }
+  .hero-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 8px 40px rgba(64,86,120,0.08);
+  }
+  .hero-card-label {
+    font-size: 0.75rem; font-weight: 600;
+    color: var(--grey-mid);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .stage-list { display: flex; flex-direction: column; gap: 12px; }
+  .stage-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: var(--grey-light);
+    transition: background 0.2s;
+  }
+  .stage-item.active { background: var(--yellow-light); }
+  .stage-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700;
+    color: var(--grey);
+    flex-shrink: 0;
+  }
+  .stage-item.active .stage-num {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--ink);
+  }
+  .stage-title { font-size: 0.875rem; font-weight: 500; color: var(--grey); }
+  .stage-sub { font-size: 0.75rem; color: var(--grey-mid); margin-top: 1px; }
+  .hero-badge {
+    position: absolute;
+    bottom: -18px; left: 32px;
+    background: var(--grey);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex; align-items: center; gap: 10px;
+    box-shadow: 0 4px 20px rgba(64,86,120,0.18);
+  }
+  .badge-icon { font-size: 1.1rem; }
+
+  /* ─── SECTION WRAPPER ─── */
+  section { padding: 96px 5vw; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-header { max-width: 560px; margin-bottom: 60px; }
+  .section-tag {
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    color: var(--grey);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-header p {
+    color: var(--grey-mid);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* ─── STAGES ─── */
+  #stages { background: var(--grey-light); }
+  .stages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+  .stage-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .stage-card:hover { box-shadow: 0 8px 32px rgba(64,86,120,0.1); transform: translateY(-3px); }
+  .stage-card-accent {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--border);
+  }
+  .stage-card.featured .stage-card-accent { background: var(--yellow); }
+  .stage-card-num {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .stage-card.featured .stage-card-num { color: var(--yellow-light); }
+  .stage-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--grey);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .stage-card p {
+    font-size: 0.875rem;
+    color: var(--grey-mid);
+    line-height: 1.65;
+  }
+  .stage-card-tag {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: var(--grey-light);
+    color: var(--grey);
+  }
+  .stage-card.featured .stage-card-tag {
+    background: var(--yellow-light);
+    color: var(--ink);
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  .how-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .how-steps { display: flex; flex-direction: column; gap: 0; }
+  .how-step {
+    display: flex; gap: 24px;
+    padding-bottom: 36px;
+    position: relative;
+  }
+  .how-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 19px; top: 42px;
+    width: 1px;
+    bottom: 0;
+    background: var(--border);
+  }
+  .how-step-icon {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--grey);
+    flex-shrink: 0;
+    position: relative; z-index: 1;
+  }
+  .how-step.accent .how-step-icon {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--ink);
+  }
+  .how-step-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--grey);
+    margin-bottom: 6px;
+    padding-top: 8px;
+  }
+  .how-step-content p {
+    font-size: 0.875rem;
+    color: var(--grey-mid);
+    line-height: 1.65;
+  }
+
+  .how-callout {
+    background: var(--grey);
+    border-radius: 16px;
+    padding: 40px;
+    color: var(--white);
+    position: sticky; top: 100px;
+  }
+  .how-callout h3 {
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  .how-callout p {
+    font-size: 0.9rem;
+    opacity: 0.72;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  .callout-stats { display: flex; flex-direction: column; gap: 20px; margin-bottom: 36px; }
+  .callout-stat { display: flex; align-items: baseline; gap: 12px; }
+  .callout-stat-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--yellow);
+    line-height: 1;
+  }
+  .callout-stat-label { font-size: 0.8rem; opacity: 0.65; }
+
+  /* ─── SERVICES / PRICING ─── */
+  #services { background: var(--white); }
+  .discovery-banner {
+    background: var(--yellow);
+    border-radius: 14px;
+    padding: 28px 36px;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 48px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .discovery-banner-text h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .discovery-banner-text p {
+    font-size: 0.875rem;
+    color: rgba(26,31,46,0.65);
+  }
+  .btn-dark {
+    background: var(--ink);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  .btn-dark:hover { opacity: 0.82; }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .pricing-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 32px;
+    display: flex; flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .pricing-card:hover { box-shadow: 0 8px 40px rgba(64,86,120,0.08); }
+  .pricing-card.featured {
+    border-color: var(--grey);
+    border-width: 2px;
+  }
+  .popular-badge {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: var(--yellow);
+    color: var(--ink);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+  .pricing-tier {
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--grey-mid);
+    margin-bottom: 12px;
+  }
+  .pricing-card.featured .pricing-tier { color: var(--grey); }
+  .pricing-name {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    color: var(--grey);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .pricing-sub {
+    font-size: 0.875rem;
+    color: var(--grey-mid);
+    line-height: 1.5;
+    margin-bottom: 28px;
+  }
+  .pricing-divider {
+    height: 1px; background: var(--border);
+    margin-bottom: 28px;
+  }
+  .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .pricing-features li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 0.875rem;
+    color: var(--grey);
+  }
+  .check {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--grey-light);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 0.65rem;
+  }
+  .pricing-card.featured .check {
+    background: var(--yellow-light);
+  }
+  .pricing-cta {
+    margin-top: 32px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 13px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1.5px solid var(--border);
+    color: var(--grey);
+    transition: all 0.2s;
+  }
+  .pricing-cta:hover { border-color: var(--grey); background: var(--grey-light); }
+  .pricing-card.featured .pricing-cta {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--ink);
+  }
+  .pricing-card.featured .pricing-cta:hover { opacity: 0.88; }
+
+  /* ─── TESTIMONIALS ─── */
+  #results { background: var(--grey-light); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+  }
+  .testimonial-stars {
+    display: flex; gap: 3px;
+    margin-bottom: 18px;
+  }
+  .star { color: var(--yellow); font-size: 1rem; }
+  .testimonial-card blockquote {
+    font-size: 0.925rem;
+    color: var(--grey);
+    line-height: 1.7;
+    font-style: normal;
+    margin-bottom: 24px;
+  }
+  .testimonial-card blockquote::before {
+    content: '\201C';
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    color: var(--yellow);
+    line-height: 0;
+    vertical-align: -0.55em;
+    margin-right: 4px;
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--grey);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .author-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--grey);
+  }
+  .author-desc {
+    font-size: 0.75rem;
+    color: var(--grey-mid);
+    margin-top: 2px;
+  }
+
+  /* ─── ABOUT ─── */
+  #about { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-image-block { position: relative; }
+  .about-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 16px;
+    background: var(--grey-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.875rem;
+    color: var(--grey-mid);
+    position: relative;
+    overflow: hidden;
+  }
+  .about-photo-placeholder::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 30%;
+    background: linear-gradient(to top, rgba(64,86,120,0.06), transparent);
+  }
+  .about-accent-card {
+    position: absolute;
+    bottom: -24px; right: -24px;
+    background: var(--yellow);
+    border-radius: 12px;
+    padding: 20px 24px;
+    min-width: 180px;
+    box-shadow: 0 8px 24px rgba(252,190,26,0.2);
+  }
+  .accent-card-num {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .accent-card-label {
+    font-size: 0.8rem;
+    color: rgba(26,31,46,0.65);
+    margin-top: 4px;
+  }
+  .about-text h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 2.5vw, 2.4rem);
+    color: var(--grey);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .about-text p {
+    font-size: 0.95rem;
+    color: var(--grey-mid);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+  .about-text p:last-of-type { margin-bottom: 32px; }
+  .about-credentials { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+  .cred-item {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.875rem;
+    color: var(--grey);
+  }
+  .cred-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--yellow);
+    flex-shrink: 0;
+  }
+
+  /* ─── CONTACT / CTA ─── */
+  #contact {
+    background: var(--grey);
+    color: var(--white);
+    padding: 96px 5vw;
+  }
+  .contact-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .contact-left h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    color: var(--white);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .contact-left h2 span { color: var(--yellow); }
+  .contact-left p {
+    font-size: 0.95rem;
+    opacity: 0.65;
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+  .contact-highlights { display: flex; flex-direction: column; gap: 16px; }
+  .contact-highlight {
+    display: flex; align-items: flex-start; gap: 14px;
+  }
+  .contact-highlight-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .contact-highlight-text strong {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--white);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .contact-highlight-text span {
+    font-size: 0.8rem;
+    opacity: 0.55;
+  }
+
+  .contact-form-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px;
+  }
+  .contact-form-card h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--grey);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .contact-form-card p {
+    font-size: 0.875rem;
+    color: var(--grey-mid);
+    margin-bottom: 28px;
+  }
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--grey);
+    margin-bottom: 7px;
+    letter-spacing: 0.01em;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    color: var(--ink);
+    background: var(--white);
+    transition: border-color 0.2s;
+    outline: none;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--grey); }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-submit {
+    width: 100%;
+    background: var(--yellow);
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: opacity 0.2s, transform 0.15s;
+    font-family: var(--sans);
+  }
+  .form-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+  .form-note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--grey-mid);
+    margin-top: 12px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    padding: 40px 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .footer-logo span { color: var(--yellow); }
+  .footer-links {
+    display: flex; gap: 24px; list-style: none;
+  }
+  .footer-links a {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(255,255,255,0.8); }
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero-grid, .how-grid, .about-grid, .contact-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .hero-portrait { right: 20%; top: 200px; transform: translateX(50%); width: 280px; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .stages-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .about-accent-card { bottom: -16px; right: -8px; }
+  }
+
+@media (max-width: 1080px) {
+    .hero-portrait { right: 20%; top: 200px; transform: translateX(50%); width: 280px; }
+  }
+
+  @media (max-width: 560px) {
+    section { padding: 64px 5vw; }
+    .stages-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+    @media (max-width: 760px) {
+    .hero-portrait { display: none; }
+  }
+
+  /* ─── REVEAL ANIMATION ─── */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Studio<span>.</span>Ascent</a>
+  <ul class="nav-links">
+    <li><a href="#stages">Who I help</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book free call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-mark"></div>
+  <img class="hero-portrait" src="https://newwestmusic.ca/wp-content/uploads/2017/09/alfonso_arnold-0991-e1506306883334.jpg" alt="Studio owner portrait" loading="lazy">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <!-- <div class="eyebrow"><span class="eyebrow-dot"></span> Music studio consulting</div> -->
+      <h1>Every studio<br>hits a ceiling.<br><em>Let's break yours.</em></h1>
+      <!-- <p>From your first solo student to a 500-person operation — I've built it, learned it, and now I help music teachers and schools push through the wall that's holding them back.</p> -->
+      <h2>More students. Less chaos. Real freedom.</h3>
+      <p>From first lesson to 700 students — I learned it the hard way so you don't have to. Now I help music school owners and teachers scale with less chaos and more freedom.</p>     
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Book your free 15-min call</a>
+        <a href="#services" class="btn-ghost">See how I can help</a>
+      </div>
+    </div>
+    <!-- <div class="hero-visual reveal">
+      <div class="hero-card">
+        <div class="hero-card-label">Where are you right now?</div>
+        <div class="stage-list">
+          <div class="stage-item">
+            <div class="stage-num">1</div>
+            <div>
+              <div class="stage-title">Going independent</div>
+              <div class="stage-sub">Building your first student base</div>
+            </div>
+          </div>
+          <div class="stage-item active">
+            <div class="stage-num">2</div>
+            <div>
+              <div class="stage-title">Hiring your first teachers</div>
+              <div class="stage-sub">Growing beyond solo capacity</div>
+            </div>
+          </div>
+          <div class="stage-item">
+            <div class="stage-num">3</div>
+            <div>
+              <div class="stage-title">Scaling past 200 students</div>
+              <div class="stage-sub">Systems, retention, and growth</div>
+            </div>
+          </div>
+          <div class="stage-item">
+            <div class="stage-num">4</div>
+            <div>
+              <div class="stage-title">Running a large operation</div>
+              <div class="stage-sub">500+ students, full teams</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <span class="badge-icon">🎯</span>
+        Start with a free 15-min discovery call
+      </div>
+    </div> -->
+  </div>
+</section>
+
+<!-- WHO I HELP -->
+<section id="stages">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-tag">Who I help</span>
+      <h2>There's a breakthrough at every stage</h2>
+      <p>The challenges that come with growth are predictable — but only if you've been there before. I have.</p>
+    </div>
+    <div class="stages-grid">
+      <div class="stage-card reveal">
+        <div class="stage-card-accent"></div>
+        <div class="stage-card-num">01</div>
+        <h3>Becoming an independent music teacher</h3>
+        <p>You're leaving an institution or starting fresh. Setting your rates, finding students, and building a sustainable schedule feels overwhelming without a roadmap.</p>
+        <span class="stage-card-tag">Early stage</span>
+      </div>
+      <div class="stage-card featured reveal">
+        <div class="stage-card-accent"></div>
+        <div class="stage-card-num">02</div>
+        <h3>Hiring your first team of teachers</h3>
+        <p>You've maxed out your personal capacity. Now comes the hard part — finding the right teachers, managing quality, and building a culture that retains them.</p>
+        <span class="stage-card-tag">Growth stage</span>
+      </div>
+      <div class="stage-card reveal">
+        <div class="stage-card-accent"></div>
+        <div class="stage-card-num">03</div>
+        <h3>Growing your studio beyond 200–300 students</h3>
+        <p>You've proven the model. Now scaling means building systems for enrolment, scheduling, billing, and retention — without burning out.</p>
+        <span class="stage-card-tag">Scale stage</span>
+      </div>
+      <div class="stage-card reveal">
+        <div class="stage-card-accent"></div>
+        <div class="stage-card-num">04</div>
+        <h3>Refining a large-scale operation</h3>
+        <p>500+ students is a serious business. The focus shifts to leadership, reporting, team development, and protecting the quality that got you here.</p>
+        <span class="stage-card-tag">Enterprise stage</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner">
+    <div class="how-grid">
+      <div>
+        <div class="section-header reveal" style="margin-bottom: 40px;">
+          <span class="section-tag">How it works</span>
+          <h2>A clear path from stuck to scaling</h2>
+        </div>
+        <div class="how-steps">
+          <div class="how-step accent reveal">
+            <div class="how-step-icon">1</div>
+            <div class="how-step-content">
+              <h4>Book a free 15-minute discovery call</h4>
+              <p>We get clear on where you are, what's blocking you, and whether I'm the right fit to help. No pitch, no pressure.</p>
+            </div>
+          </div>
+          <div class="how-step reveal">
+            <div class="how-step-icon">2</div>
+            <div class="how-step-content">
+              <h4>Choose the right consulting package</h4>
+              <p>Based on your stage and goals, we agree on the level of engagement that makes sense — hourly, monthly, or a project package.</p>
+            </div>
+          </div>
+          <div class="how-step reveal">
+            <div class="how-step-icon">3</div>
+            <div class="how-step-content">
+              <h4>Work through it together</h4>
+              <p>Whether it's a focused Q&A session or deep monthly collaboration, you get real advice grounded in experience running a multi-hundred-student studio.</p>
+            </div>
+          </div>
+          <div class="how-step reveal">
+            <div class="how-step-icon">4</div>
+            <div class="how-step-content">
+              <h4>Break through and keep moving</h4>
+              <p>The goal isn't dependency — it's momentum. You leave with clarity, a plan, and the confidence to execute it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="how-callout reveal">
+          <h3>Real experience, not theory</h3>
+          <p>I've built a music studio from zero to a multi-teacher, multi-hundred-student operation. Every challenge you're facing right now is something I've navigated personally.</p>
+          <div class="callout-stats">
+            <div class="callout-stat">
+              <div class="callout-stat-num">500+</div>
+              <div class="callout-stat-label">Students in my own studio at peak</div>
+            </div>
+            <div class="callout-stat">
+              <div class="callout-stat-num">15+</div>
+              <div class="callout-stat-label">Years growing and running music schools</div>
+            </div>
+            <div class="callout-stat">
+              <div class="callout-stat-num">4</div>
+              <div class="callout-stat-label">Distinct growth stages lived and solved</div>
+            </div>
+          </div>
+          <a href="#contact" class="btn-primary">Start with a free call →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES / PRICING -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-tag">Services</span>
+      <h2>Three ways to work together</h2>
+      <p>Pick the format that matches where you are and what you need right now.</p>
+    </div>
+
+    <div class="discovery-banner reveal">
+      <div class="discovery-banner-text">
+        <h3>Not sure where to start? Begin here — it's free.</h3>
+        <p>A 15-minute call to understand your situation and point you in the right direction. No obligation.</p>
+      </div>
+      <a href="#contact" class="btn-dark">Book the free discovery call</a>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-tier">Tier 1</div>
+        <div class="pricing-name">Hourly advice</div>
+        <div class="pricing-sub">Targeted help when you have a specific challenge or decision to work through.</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> 60-minute video session</li>
+          <li><span class="check">✓</span> Focused on your specific problem</li>
+          <li><span class="check">✓</span> Practical, actionable guidance</li>
+          <li><span class="check">✓</span> Session notes sent after</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Enquire about hourly rate</a>
+      </div>
+
+      <div class="pricing-card featured reveal">
+        <div class="popular-badge">Most popular</div>
+        <div class="pricing-tier">Tier 2</div>
+        <div class="pricing-name">Monthly consulting</div>
+        <div class="pricing-sub">Ongoing support and accountability as you navigate a growth stage.</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> 2 video calls per month</li>
+          <li><span class="check">✓</span> Custom recommendations for your studio</li>
+          <li><span class="check">✓</span> Unlimited email support</li>
+          <li><span class="check">✓</span> Resource templates and frameworks</li>
+          <li><span class="check">✓</span> Progress tracking between sessions</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Get monthly consulting</a>
+      </div>
+
+      <div class="pricing-card reveal">
+        <div class="pricing-tier">Tier 3</div>
+        <div class="pricing-name">Premium integral</div>
+        <div class="pricing-sub">A deep-dive project engagement for a specific transformation — scoped and priced per project.</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Full project scoping session</li>
+          <li><span class="check">✓</span> Regular check-ins throughout</li>
+          <li><span class="check">✓</span> Custom deliverables and plans</li>
+          <li><span class="check">✓</span> End-to-end support</li>
+          <li><span class="check">✓</span> Post-project follow-up</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Discuss a project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="results">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-tag">Results</span>
+      <h2>Studios that broke through</h2>
+      <p>What happens when you stop guessing and start working with someone who's already solved it.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <blockquote>Within three months of working together I had hired my first two teachers, set up a proper enrolment system, and stopped dreading Monday mornings. The clarity alone was worth it.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">SR</div>
+          <div>
+            <div class="author-name">Sarah R.</div>
+            <div class="author-desc">Piano studio owner · 85 → 160 students</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <blockquote>I was at 240 students and completely stuck — couldn't grow without breaking things. The monthly consulting package gave me someone to think out loud with who had actually done it.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: #6B7F99;">MK</div>
+          <div>
+            <div class="author-name">Marcus K.</div>
+            <div class="author-desc">Music school director · 240 → 380 students</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <blockquote>I came in thinking I had a marketing problem. Turns out I had a retention problem. One session changed my entire focus and within six months my churn dropped dramatically.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: #8898AA;">JL</div>
+          <div>
+            <div class="author-name">Jamie L.</div>
+            <div class="author-desc">Independent teacher going school · Stage 1 → 2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image-block reveal">
+        <div class="about-photo-placeholder">
+          <span>Your photo here</span>
+        </div>
+        <div class="about-accent-card">
+          <div class="accent-card-num">15+</div>
+          <div class="accent-card-label">Years in music education</div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <span class="section-tag">About</span>
+        <h2>I've built what you're trying to build</h2>
+        <p>I started exactly where most of my clients are — a passionate music teacher with more students than time, more ambition than systems, and more questions than answers.</p>
+        <p>Over 15 years I grew a studio from zero to over 500 active students, hired and led a team of teachers, built enrolment and retention systems from scratch, and learned — often the hard way — what actually works at each stage.</p>
+        <p>Now I consult with teachers and school owners who are at the same crossroads I once was. I'm not a business coach who happens to know music. I'm a music educator who had to become a business operator, and I can help you do the same.</p>
+        <div class="about-credentials">
+          <div class="cred-item"><span class="cred-dot"></span> 500+ students managed at peak capacity</div>
+          <div class="cred-item"><span class="cred-dot"></span> Multi-teacher studio built from the ground up</div>
+          <div class="cred-item"><span class="cred-dot"></span> Enrolment, retention, and hiring systems developed</div>
+          <div class="cred-item"><span class="cred-dot"></span> Consulted with studios across multiple countries</div>
+        </div>
+        <a href="#contact" class="btn-primary">Work with me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:0;">
+  <div class="contact-inner" style="padding: 96px 5vw;">
+    <div class="contact-left reveal">
+      <h2>Ready to find your<br><span>breakthrough?</span></h2>
+      <p>Start with a free 15-minute discovery call. We'll get clear on where you are, what's blocking you, and what kind of help makes sense. No pitch, just a conversation.</p>
+      <div class="contact-highlights">
+        <div class="contact-highlight">
+          <div class="contact-highlight-icon">📞</div>
+          <div class="contact-highlight-text">
+            <strong>Free 15-min discovery call</strong>
+            <span>No obligation, just clarity on next steps</span>
+          </div>
+        </div>
+        <div class="contact-highlight">
+          <div class="contact-highlight-icon">⚡</div>
+          <div class="contact-highlight-text">
+            <strong>Quick response</strong>
+            <span>I aim to reply within one business day</span>
+          </div>
+        </div>
+        <div class="contact-highlight">
+          <div class="contact-highlight-icon">🎯</div>
+          <div class="contact-highlight-text">
+            <strong>Right fit first</strong>
+            <span>If I'm not the best person to help, I'll say so</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-card reveal">
+      <!-- <h3>Get in touch</h3>
+      <p>Tell me a bit about where you are and I'll reach out to book your call.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First name</label>
+          <input type="text" id="fname" placeholder="Sarah">
+        </div>
+        <div class="form-group">
+          <label for="lname">Last name</label>
+          <input type="text" id="lname" placeholder="Rivera">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="sarah@yourstudio.com">
+      </div>
+      <div class="form-group">
+        <label for="stage">What stage is your studio at?</label>
+        <select id="stage">
+          <option value="">Select a stage...</option>
+          <option>Stage 1 — Becoming an independent teacher</option>
+          <option>Stage 2 — Hiring my first teachers</option>
+          <option>Stage 3 — Growing past 200–300 students</option>
+          <option>Stage 4 — Refining a large operation (500+)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">What's your biggest challenge right now?</label>
+        <textarea id="message" placeholder="Briefly describe what you're working through..."></textarea>
+      </div>
+      <button class="form-submit" type="button" onclick="this.textContent='Message sent — I\'ll be in touch soon!'">Send message</button>
+      <p class="form-note">Your free 15-minute discovery call is the first step. I'll follow up to book it.</p>
+     -->
+     <!-- Cal inline embed code begins -->
+<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-15min"></div>
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "15min", {origin:"https://app.cal.com"});
+Cal.config = Cal.config || {};
+Cal.config.forwardQueryParams = true;
+
+  Cal.ns["15min"]("inline", {
+    elementOrSelector:"#my-cal-inline-15min",
+    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+    calLink: "christian-bideau-821zvl/15min",
+  });
+
+  Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal inline embed code ends -->
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Studio<span>.</span>Ascent</a>
+  <ul class="footer-links">
+    <li><a href="#stages">Who I help</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Studio Ascent</span>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
